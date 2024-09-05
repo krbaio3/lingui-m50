@@ -1,7 +1,14 @@
 {
   "name": "linguijs-m50",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.5",
+  "main": "dist/cjs/index.js",
+  "module": "dist/src/esm/index.js",
+  "types": "dist/types/esm/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,6 +21,22 @@
   },
   "homepage": "https://github.com/krbaio3/lingui-m50#readme",
   "scripts": {
+    "clean": "rm -rf dist",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "prepack": "npm run build",
+    "pack": "npm pack"
   },
-  "keywords": []
+  "keywords": ["i18n", "l10n", "lingui", "react", "translations"],
+  "dependencies": {
+    "@lingui/cli": "^4.11.4",
+    "@lingui/core": "^4.11.4",
+    "@lingui/macro": "^4.11.4",
+    "@lingui/react": "^4.11.4"
+  },
+  "devDependencies": {
+    "dts-gen": "^0.10.3",
+    "typescript": "^5.5.4"
+  }
 }
