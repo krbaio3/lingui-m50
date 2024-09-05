@@ -1,0 +1,8 @@
+{
+  "name": "lingui-m50",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "git@github.com:krbaio3/lingui-m50.git",
+  "author": "John Krbaio <krbaio3@gmail.com>"
+}
